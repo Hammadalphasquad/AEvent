@@ -508,6 +508,6 @@ const proWebinarStyle = ref({
 </script>
 <style scoped>
 .background-img {
-  background: url(images/background.png);
+  background-image: url(images/background.png);
 }
 </style>
