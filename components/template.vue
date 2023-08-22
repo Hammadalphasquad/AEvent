@@ -508,6 +508,6 @@ const proWebinarStyle = ref({
 </script>
 <style scoped>
 .background-img {
-  background-image: url(images/background.png);
+  background-image: url(https://tuk-cdn.s3.amazonaws.com/can-uploader/background.png);
 }
 </style>
