@@ -7,10 +7,10 @@
       class="fixed inset-0 h-screen z-60 w-full bg-black bg-opacity-30 backdrop-blur-sm"
     >
       <div
-        class="absolute px-5 inset-1 py-6 m-auto max-w-[1450px] w-full max-h-[879px] overflow-auto content-scroll shadow-xl rounded-lg bg-[#f5f5f5] flex justify-center gap-7"
+        class="absolute  px-5 inset-1 py-6 m-auto max-w-[1450px] w-full max-h-[879px] overflow-auto content-scroll shadow-xl rounded-lg bg-[#f5f5f5] flex justify-center gap-7"
       >
         <!-- Preview -->
-        <div class="max-w-[1125px] w-full bg-white pb-8 rounded-xl">
+        <div class="max-w-[1125px] w-full  bg-white pb-8 rounded-xl">
           <p
             class="font-semibold text-base text-neutral-600 py-4 px-6 border-b border-neutral-200 dark:border-neutral-700"
           >
@@ -507,8 +507,7 @@ const proWebinarStyle = ref({
 })
 </script>
 <style scoped>
-.img-set {
-  margin: 0;
-
+.background-img {
+  background: url(images/background.png);
 }
 </style>

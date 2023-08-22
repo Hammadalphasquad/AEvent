@@ -9,9 +9,6 @@
 </script>
 
 <style>
-.background-img {
-  background: url(images/background.png);
-}
 .temp-prev {
   font-family: cursive;
 }
