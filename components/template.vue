@@ -1,23 +1,26 @@
 <template>
   <div>
     <div class="img-set">
-      <img src="../public/images/pic-bg.jpg" class="background-p" />
+      <img src="../public/images/pic-bg.jpg" />
     </div>
     <div
-      class="fixed inset-0 h-screen z-60 w-full bg-black bg-opacity-30 backdrop-blur-sm"
+      class="fixed inset-0 z-60 w-full bg-black bg-opacity-30 backdrop-blur-sm"
     >
       <div
-        class="absolute  px-5 inset-1 py-6 m-auto max-w-[1450px] w-full max-h-[879px] overflow-auto  shadow-xl rounded-lg bg-[#f5f5f5] flex justify-center gap-7"
+        class="absolute px-5 inset-1 py-6 m-auto max-w-[1450px] w-full max-h-[879px] overflow-auto shadow-xl rounded-lg bg-[#f5f5f5] flex justify-center gap-5"
       >
         <!-- Preview -->
-        <div class="max-w-[1125px] w-full  bg-white pb-8 rounded-xl">
+        <div class="max-w-[1125px] w-full bg-white pb-8 rounded-xl">
           <p
             class="font-semibold text-base text-neutral-600 py-4 px-6 border-b border-neutral-200 dark:border-neutral-700"
           >
             Template Preview
           </p>
-          <div >
-          <div  class="pt-16 rounded-2xl background-img text-white pb-64 m-6">
+
+          <div
+            :style="wallpaperStyle"
+            class="bg-cover pt-16 rounded-2xl text-white pb-64 m-6"
+          >
             <div class="text-center">
               <p
                 :style="headingStyle"
@@ -25,13 +28,22 @@
               >
                 {{ headingStyle.text }}
               </p>
-              <p :style="subHeadingStyle" class="text-2xl py-1  my-5 rounded-xl mx-10 overflow-hidden">
+              <p
+                :style="subHeadingStyle"
+                class="text-2xl py-1 my-5 rounded-xl mx-10 overflow-hidden"
+              >
                 {{ subHeadingStyle.text }}
               </p>
-              <p :style="timerTextStyle" class="text-2xl py-1 rounded-xl mx-10 overflow-hidden">
+              <p
+                :style="timerTextStyle"
+                class="text-2xl py-1 rounded-xl mx-10 overflow-hidden"
+              >
                 {{ timerTextStyle.text }}
               </p>
-              <p :style="proWebinarStyle" class="text-2xl py-1 my-5 rounded-xl mx-10 overflow-hidden">
+              <p
+                :style="proWebinarStyle"
+                class="text-2xl py-1 my-5 rounded-xl mx-10 overflow-hidden"
+              >
                 {{ proWebinarStyle.text }}
               </p>
               <div
@@ -47,7 +59,6 @@
             </div>
           </div>
         </div>
-        </div>
 
         <!-- Side-bar -->
 
@@ -60,7 +71,7 @@
             <h4
               class="font-medium text-base text-neutral-800 dark:text-neutral-200"
             >
-            Template
+              Template
             </h4>
             <svg
               class="cursor-pointer text-neutral-800 dark:text-neutral-200"
@@ -162,7 +173,7 @@
           </div>
           <div class="border-b-[1px] pb-2 flex items-center justify-between">
             <p
-              @click="(show=false) (currentElementStyle=timerTextStyle)"
+              @click="(show = false)((currentElementStyle = timerTextStyle))"
               class="cursor-pointer font-medium text-base text-neutral-800 dark:text-neutral-200"
             >
               Timer Text
@@ -204,7 +215,7 @@
           </div>
           <div class="border-b-[1px] pb-2 flex items-center justify-between">
             <p
-              @click="(show=false) (currentElementStyle=proWebinarStyle)"
+              @click="(show = false)((currentElementStyle = proWebinarStyle))"
               class="cursor-pointer font-medium text-base text-neutral-800 dark:text-neutral-200"
             >
               Pro Webinar Media
@@ -246,8 +257,8 @@
           </div>
         </div>
 
-        <!-- edit elements -->
-        <div v-else class="flex flex-col gap-3 font-medium">
+        <!-- Edit elements -->
+        <div v-else class="flex max-w-[245px] flex-col gap-3 font-medium pr-1 overflow-scroll">
           <div class="w-full flex items-center justify-between mb-7">
             <div
               class="flex items-center gap-1 cursor-pointer text-neutral-800 dark:text-neutral-200"
@@ -298,30 +309,44 @@
             ></textarea>
           </div>
           <p class="font-semibold text-sm text-neutral-800">Font Family</p>
-          <select 
+          <select
             v-model="currentElementStyle.fontFamily"
             class="font-normal text-sm text-neutral-600 transition-all ease-in-out duration-150 hover:border-neutral-400 rounded-lg border-[#d4d4d4] border-[1px] py-3 px-2"
-            name="Cursive" >
+            name="Cursive"
+          >
             <option class="dropd">Cursive</option>
             <option class="dropd">Sans Serif</option>
             <option class="dropd">Courier New</option>
           </select>
-          
-          <!-- <p class="font-semibold text-sm text-neutral-800">Wallpaper</p>
+
+          <p class="font-semibold text-sm text-neutral-800">Wallpaper</p>
           <select
-            v-model="currentElementStyle.backGround"
+            v-model="wallpaperStyle.backgroundImage"
             class="font-normal text-sm text-neutral-600 transition-all ease-in-out duration-150 hover:border-neutral-400 rounded-lg border-[#d4d4d4] border-[1px] py-3 px-2"
           >
-            <option>Wallpaper no 1</option>
-            <option>Wallpaper no 2</option>
-            <option>Wallpaper no 3</option>
-          </select> -->
+            <option
+              value="url(https://tuk-cdn.s3.amazonaws.com/can-uploader/background1.png)"
+            >
+              Wallpaper no 1
+            </option>
+            <option
+              value="url(https://tuk-cdn.s3.amazonaws.com/can-uploader/backgroundimageno1.png)"
+            >
+              Wallpaper no 2
+            </option>
+            <option
+              value="url(https://tuk-cdn.s3.amazonaws.com/can-uploader/backgroundimage.png)"
+            >
+              Wallpaper no 3
+            </option>
+          </select>
 
           <p class="font-semibold text-sm text-neutral-800">Font Weight</p>
           <select
             v-model="currentElementStyle.fontWeight"
             class="font-normal text-sm text-neutral-600 transition-all ease-in-out duration-150 hover:border-neutral-400 rounded-lg border-[#d4d4d4] border-[1px] py-3 px-2"
-            placeholder="Bold" >
+            placeholder="Bold"
+          >
             <option>Normal</option>
             <option>Bold</option>
           </select>
@@ -455,18 +480,24 @@
 <script setup>
 const show = ref(true);
 
+const imageBackground = ref(
+  "url(https://tuk-cdn.s3.amazonaws.com/can-uploader/background.png)"
+);
+
+// const updateCurrentElementStyle = (event) => {
+//   imageBackground = event.target.value;
+// };
 const headingStyle = ref({
   text: "Hi there its me, am building dynamic builder",
   fontSize: "18px",
-  fontFamily: "cursive",
-  fontWeight: "bold",
+  fontFamily: "Cursive",
+  fontWeight: "Bold",
   color: "#ffffff",
-  backgroundColor: "",
-  paddingTop: "",
-  paddingLeft: "",
-  paddingBottom: "",
-  paddingRight: "",
-  backgroundImage: ""
+  backgroundColor: "#04203e",
+  paddingTop: "2px",
+  paddingLeft: "2px",
+  paddingBottom: "2px",
+  paddingRight: "2px",
 });
 const currentElementStyle = ref(headingStyle.value);
 
@@ -504,16 +535,17 @@ const proWebinarStyle = ref({
   paddingTop: "",
   paddingLeft: "",
   paddingBottom: "",
-  paddingRight: ""
-})
-const wallPaper=ref({
+  paddingRight: "",
+});
 
-})
-const currentWallpaperStyle = ref(wallPaper.value);
+const wallpaperStyle = ref({
+  backgroundImage: imageBackground.value,
+});
+// const currentbackGroundrStyle = ref(wallpaperStyle.value);
 </script>
 <style scoped>
-.background-img {
+/* .background-img {
   background-image: url(https://tuk-cdn.s3.amazonaws.com/can-uploader/background.png);
   background-size: cover;
-}
+} */
 </style>
