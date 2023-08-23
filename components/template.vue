@@ -1,13 +1,20 @@
 <template>
   <div>
-    <div class="img-set">
-      <img src="../public/images/pic-bg.jpg" />
+    <div>
+      <img src="images/pic-bg.jpg" />
     </div>
     <div
-      class="fixed inset-0 z-60 w-full bg-black bg-opacity-30 backdrop-blur-sm"
+      class="hover:bg-sky-700 text-black text-lg font-bold absolute top-[400px] left-[850px] border-[2px] bg- border-black cursor-pointer p-5 rounded-lg"
+    >
+      <h1 @click="modalOpen">Open Modal</h1>
+    </div>
+
+    <div
+      v-if="modal"
+      class="fixed inset-0 z-10 w-full bg-black bg-opacity-30 backdrop-blur-sm"
     >
       <div
-        class="absolute px-5 inset-1 py-6 m-auto max-w-[1450px] w-full max-h-[879px] overflow-auto shadow-xl rounded-lg bg-[#f5f5f5] flex justify-center gap-5"
+        class="absolute px-5 inset-0 py-6 m-auto max-w-[1450px] w-full max-h-[879px] overflow-auto shadow-xl rounded-lg bg-[#f5f5f5] flex justify-center gap-5"
       >
         <!-- Preview -->
         <div class="max-w-[1125px] w-full bg-white pb-8 rounded-xl">
@@ -74,6 +81,7 @@
               Template
             </h4>
             <svg
+              @click="modalClose"
               class="cursor-pointer text-neutral-800 dark:text-neutral-200"
               width="11"
               height="12"
@@ -258,7 +266,10 @@
         </div>
 
         <!-- Edit elements -->
-        <div v-else class="flex max-w-[245px] flex-col gap-3 font-medium pr-1 overflow-scroll">
+        <div
+          v-else
+          class="flex max-w-[245px] flex-col gap-3 font-medium pr-1 overflow-scroll"
+        >
           <div class="w-full flex items-center justify-between mb-7">
             <div
               class="flex items-center gap-1 cursor-pointer text-neutral-800 dark:text-neutral-200"
@@ -286,6 +297,8 @@
               </p>
             </div>
             <svg
+            @click="modalClose"
+
               class="cursor-pointer text-neutral-800 dark:text-neutral-200"
               width="11"
               height="12"
@@ -479,6 +492,14 @@
 </template>
 <script setup>
 const show = ref(true);
+const modal = ref(false);
+
+const modalClose = () => {
+  modal.value = false;
+};
+const modalOpen = () => {
+  modal.value = true;
+};
 
 const imageBackground = ref(
   "url(https://tuk-cdn.s3.amazonaws.com/can-uploader/background.png)"
@@ -493,7 +514,7 @@ const headingStyle = ref({
   fontFamily: "Cursive",
   fontWeight: "Bold",
   color: "#ffffff",
-  backgroundColor: "#04203e",
+  backgroundColor: "",
   paddingTop: "2px",
   paddingLeft: "2px",
   paddingBottom: "2px",
@@ -548,4 +569,15 @@ const wallpaperStyle = ref({
   background-image: url(https://tuk-cdn.s3.amazonaws.com/can-uploader/background.png);
   background-size: cover;
 } */
+</style>
+<style scoped>
+select:required:invalid {
+  color: #666;
+}
+option[value=""][disabled] {
+  display: none;
+}
+option {
+  color: #000;
+}
 </style>
