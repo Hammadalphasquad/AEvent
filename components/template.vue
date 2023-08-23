@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <img src="images/pic-bg.jpg" />
+      <img src="../public/images/pic-bg.jpg" />
     </div>
     <div
       class="hover:bg-sky-700 text-black text-lg font-bold absolute top-[400px] left-[850px] border-[2px] bg- border-black cursor-pointer p-5 rounded-lg"
