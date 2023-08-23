@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div>
-      <img src="../public/images/pic-bg.jpg" />
+    <div >
+      <img @click="modalClose" src="../public/images/pic-bg.jpg"/>
     </div>
-    <div
-      class="hover:bg-sky-700 hover:text-white text-black text-lg font-bold absolute top-[400px] left-[850px] border-[2px] bg- border-black cursor-pointer p-5 rounded-lg"
+    <div 
+      class="transition-colors ease-in-out delay-150 hover:bg-sky-700 hover:border-sky-200 hover:text-white text-black text-lg font-bold absolute top-[400px] left-[850px] border-[2px] bg- border-black cursor-pointer p-5 rounded-lg"
     >
       <h1 @click="modalOpen">Create Your Wallpaper</h1>
     </div>
@@ -58,7 +58,7 @@
               >
                 <video autoplay muted loop>
                   <source
-                    src="https://mazwai.com/videvo_files/video/free/2018-03/small_watermarked/180301_15_B_KowloonPark_06_preview.webm"
+                    src="https://mazwai.com/videvo_files/video/free/2017-08/small_watermarked/170724_15_Setangibeach_preview.webm"
                     type="video/mp4"
                   />
                 </video>
@@ -268,16 +268,16 @@
         <!-- Edit elements -->
         <div
           v-else
-          class="flex max-w-[245px] flex-col gap-3 font-medium pr-1 overflow-scroll"
+          class="flex max-w-[245px] flex-col gap-3 font-medium pr-1 overflow-y-scroll"
         >
           <div class="w-full flex items-center justify-between mb-7">
-            <div
+            <div  @click="show = true"
               class="flex items-center gap-1 cursor-pointer text-neutral-800 dark:text-neutral-200"
             >
               <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                viewBox="0 0 24 23"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -289,8 +289,8 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              <p
-                @click="show = true"
+              <p 
+               
                 class="font-semibold text-base leading-none text-neutral-600 dark:text-neutral-400"
               >
                 Back
@@ -337,18 +337,19 @@
             v-model="wallpaperStyle.backgroundImage"
             class="font-normal text-sm text-neutral-600 transition-all ease-in-out duration-150 hover:border-neutral-400 rounded-lg border-[#d4d4d4] border-[1px] py-3 px-2"
           >
+            
             <option
-              value="url(https://tuk-cdn.s3.amazonaws.com/can-uploader/background1.png)"
+              value="url(https://tuk-cdn.s3.amazonaws.com/can-uploader/backgroundimageno1.png)"
             >
               Wallpaper no 1
             </option>
             <option
-              value="url(https://tuk-cdn.s3.amazonaws.com/can-uploader/backgroundimageno1.png)"
+              value="url(https://tuk-cdn.s3.amazonaws.com/can-uploader/backgroundimage.png)"
             >
               Wallpaper no 2
             </option>
             <option
-              value="url(https://tuk-cdn.s3.amazonaws.com/can-uploader/backgroundimage.png)"
+              value="url(https://tuk-cdn.s3.amazonaws.com/can-uploader/background1.png)"
             >
               Wallpaper no 3
             </option>
@@ -525,38 +526,38 @@ const currentElementStyle = ref(headingStyle.value);
 const subHeadingStyle = ref({
   text: "Here is Sub Headline",
   fontSize: "18px",
-  fontFamily: "cursive",
-  fontWeight: "bold",
+  fontFamily: "Cursive",
+  fontWeight: "Bold",
   color: "#ffffff",
   backgroundColor: "",
-  paddingTop: "",
-  paddingLeft: "",
-  paddingBottom: "",
-  paddingRight: "",
+  paddingTop: "2px",
+  paddingLeft: "2px",
+  paddingBottom: "2px",
+  paddingRight: "2px",
 });
 const timerTextStyle = ref({
   text: "Here is TimerText",
   fontSize: "18px",
-  fontFamily: "cursive",
-  fontWeight: "bold",
+  fontFamily: "Cursive",
+  fontWeight: "Bold",
   color: "#ffffff",
   backgroundColor: "",
-  paddingTop: "",
-  paddingLeft: "",
-  paddingBottom: "",
-  paddingRight: "",
+  paddingTop: "2px",
+  paddingLeft: "2px",
+  paddingBottom: "2px",
+  paddingRight: "2px",
 });
 const proWebinarStyle = ref({
   text: "Here is ProWebinar",
   fontSize: "18px",
-  fontFamily: "cursive",
-  fontWeight: "bold",
+  fontFamily: "Cursive",
+  fontWeight: "Bold",
   color: "#ffffff",
   backgroundColor: "",
-  paddingTop: "",
-  paddingLeft: "",
-  paddingBottom: "",
-  paddingRight: "",
+  paddingTop: "2px",
+  paddingLeft: "2px",
+  paddingBottom: "2px",
+  paddingRight: "2px",
 });
 
 const wallpaperStyle = ref({
