@@ -4,7 +4,7 @@
       <img src="../public/images/pic-bg.jpg"/>
     </div>
     <div 
-      class="shadow-inset-center transition-colors ease-in-out delay-150 hover:bg-sky-700 hover:border-sky-200 hover:text-white text-black text-lg font-bold absolute top-[400px] left-[850px] border-[2px] bg- border-black cursor-pointer p-5 rounded-lg"
+      class="text-focus-in transition-colors ease-in-out delay-100 hover:bg-sky-700 hover:border-sky-200 hover:text-white text-black text-lg font-bold absolute top-[400px] left-[850px] border-[2px] bg- border-black cursor-pointer p-5 rounded-lg"
     >
       <h1 @click="modalOpen">Create Your Wallpaper</h1>
     </div>
@@ -489,9 +489,58 @@
         </div>
       </div>
     </div>
+  
+  <!-- Support portal starts here -->
+  <div>
+  <div>
+      <img
+        v-if="!showPortal"
+        @click="showPortal = true"
+        class="fixed bottom-6 right-[72px] cursor-pointer z-10"
+        src="../public/images/sp_action_open.svg"
+        alt="setting_icons"
+      />
+      <img
+        v-if="showPortal"
+        @click="showPortal = false"
+        class="fixed bottom-6 right-[72px] cursor-pointer z-10"
+        src="../public/images/sp_action_close.svg"
+        alt="setting_icons"
+      />
+      <!-- @click.stop="showSettingsModel = !showSettingsModel" -->
+    </div>
+    <!-- v-if="showPortal" -->
+    <!-- <div
+      class=" fixed bottom-4 right-16 text-white text-sm leading-none bg-neutral-800 rounded-md flex flex-col divide-y divide-neutral-700 w-full max-w-[236px] transition-all ease-in-out duration-150"
+      :class="showPortal ? 'scale-up-br':'scale-down-br'"
+      v-if="showPortal"
+    >
+      <div class="px-6 py-5 font-semibold"><h4>Support Portal</h4></div>
+      <div class="px-5 pt-6 pb-7">
+        <ul class="flex flex-col gap-4 ">
+          <li class="flex items-center gap-3 cursor-pointer">
+            <img src="../public/images/sp_link.svg" alt="setting_icons" />
+            <p>Reset Support Link</p>
+          </li>
+          <li class="flex items-center gap-3 cursor-pointer">
+            <img src="../public/images/sp_copy.svg" alt="setting_icons" />
+            <p>Copy Support Link</p>
+          </li>
+          <li class="flex items-center gap-3 cursor-pointer">
+            <img src="../public/images/sp_target.svg" alt="setting_icons" />
+            <p>Open Support</p>
+          </li>
+        </ul>
+      </div>
+    </div> -->
+  </div>
+<!-- Support portal ends here -->
+
+  
   </div>
 </template>
 <script setup>
+// const showPortal = ref(false);
 const show = ref(true);
 const modal = ref(false);
 
