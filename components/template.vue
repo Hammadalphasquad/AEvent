@@ -1,10 +1,10 @@
 <template>
   <div>
     <div >
-      <img @click="modalClose" src="../public/images/pic-bg.jpg"/>
+      <img src="../public/images/pic-bg.jpg"/>
     </div>
     <div 
-      class="transition-colors ease-in-out delay-150 hover:bg-sky-700 hover:border-sky-200 hover:text-white text-black text-lg font-bold absolute top-[400px] left-[850px] border-[2px] bg- border-black cursor-pointer p-5 rounded-lg"
+      class="shadow-inset-center transition-colors ease-in-out delay-150 hover:bg-sky-700 hover:border-sky-200 hover:text-white text-black text-lg font-bold absolute top-[400px] left-[850px] border-[2px] bg- border-black cursor-pointer p-5 rounded-lg"
     >
       <h1 @click="modalOpen">Create Your Wallpaper</h1>
     </div>
@@ -571,14 +571,4 @@ const wallpaperStyle = ref({
   background-size: cover;
 } */
 </style>
-<style scoped>
-select:required:invalid {
-  color: #666;
-}
-option[value=""][disabled] {
-  display: none;
-}
-option {
-  color: #000;
-}
-</style>
+
