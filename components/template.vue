@@ -1,14 +1,13 @@
 <template>
   <div>
-    <div >
-      <img src="../public/images/pic-bg.jpg"/>
+    <div>
+      <img src="../public/images/pic-bg.jpg" />
     </div>
-    <div 
+    <div
       class="text-focus-in transition-colors ease-in-out delay-100 hover:bg-sky-700 hover:border-sky-200 hover:text-white text-black text-lg font-bold absolute top-[400px] left-[850px] border-[2px] bg- border-black cursor-pointer p-5 rounded-lg"
     >
       <h1 @click="modalOpen">Create Your Wallpaper</h1>
     </div>
-
     <div
       v-if="modal"
       class="fixed inset-0 z-10 w-full bg-black bg-opacity-30 backdrop-blur-sm"
@@ -19,7 +18,7 @@
         <!-- Preview -->
         <div class="max-w-[1125px] w-full bg-white pb-8 rounded-xl">
           <p
-            class="font-semibold text-base text-neutral-600 py-4 px-6 border-b border-neutral-200 dark:border-neutral-700"
+            class="font-semibold text-base text-neutral-600 py-4 px-6 border-b border-neutral-200 "
           >
             Template Preview
           </p>
@@ -76,13 +75,13 @@
         >
           <div class="w-full flex items-center justify-between mb-5">
             <h4
-              class="font-medium text-base text-neutral-800 dark:text-neutral-200"
+              class="font-medium text-base text-neutral-800  "
             >
               Template
             </h4>
             <svg
               @click="modalClose"
-              class="cursor-pointer text-neutral-800 dark:text-neutral-200"
+              class="cursor-pointer text-neutral-800 "
               width="11"
               height="12"
               viewBox="0 0 11 12"
@@ -98,7 +97,7 @@
           <div class="border-b-[1px] pb-2 flex items-center justify-between">
             <p
               @click="(show = false), (currentElementStyle = headingStyle)"
-              class="cursor-pointer font-medium text-base text-neutral-800 dark:text-neutral-200"
+              class="cursor-pointer font-medium text-base text-neutral-800  "
             >
               Heading
             </p>
@@ -140,7 +139,7 @@
           <div class="border-b-[1px] pb-2 flex items-center justify-between">
             <p
               @click="(show = false), (currentElementStyle = subHeadingStyle)"
-              class="cursor-pointer font-medium text-base text-neutral-800 dark:text-neutral-200"
+              class="cursor-pointer font-medium text-base text-neutral-800  "
             >
               Sub Heading
             </p>
@@ -182,7 +181,7 @@
           <div class="border-b-[1px] pb-2 flex items-center justify-between">
             <p
               @click="(show = false)((currentElementStyle = timerTextStyle))"
-              class="cursor-pointer font-medium text-base text-neutral-800 dark:text-neutral-200"
+              class="cursor-pointer font-medium text-base text-neutral-800  "
             >
               Timer Text
             </p>
@@ -224,7 +223,7 @@
           <div class="border-b-[1px] pb-2 flex items-center justify-between">
             <p
               @click="(show = false)((currentElementStyle = proWebinarStyle))"
-              class="cursor-pointer font-medium text-base text-neutral-800 dark:text-neutral-200"
+              class="cursor-pointer font-medium text-base text-neutral-800  "
             >
               Pro Webinar Media
             </p>
@@ -271,8 +270,9 @@
           class="flex max-w-[245px] flex-col gap-3 font-medium pr-1 overflow-y-scroll"
         >
           <div class="w-full flex items-center justify-between mb-7">
-            <div  @click="show = true"
-              class="flex items-center gap-1 cursor-pointer text-neutral-800 dark:text-neutral-200"
+            <div
+              @click="show = true"
+              class="flex items-center gap-1 cursor-pointer text-neutral-800  "
             >
               <svg
                 width="20"
@@ -289,17 +289,15 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              <p 
-               
-                class="font-semibold text-base leading-none text-neutral-600 dark:text-neutral-400"
+              <p
+                class="font-semibold text-base leading-none text-neutral-600 "
               >
                 Back
               </p>
             </div>
             <svg
-            @click="modalClose"
-
-              class="cursor-pointer text-neutral-800 dark:text-neutral-200"
+              @click="modalClose"
+              class="cursor-pointer text-neutral-800  "
               width="11"
               height="12"
               viewBox="0 0 11 12"
@@ -317,7 +315,7 @@
           <div class>
             <textarea
               v-model="currentElementStyle.text"
-              class="px-5 font-normal text-sm text-neutral-600 outline-none resize-none placeholder:text-neutral-400 dark:placeholder:text-neutral-400 bg-white dark:bg-neutral-800 dark:text-neutral-400 border border-neutral-300 dark:border-neutral-700 bg-transparent transition-all ease-in-out duration-150 hover:border-neutral-400 w-full py-3 focus:border-blue-600 pb-10 pt-3 rounded-lg"
+              class="px-5 font-normal text-sm text-neutral-600 outline-none resize-none placeholder:text-neutral-400  bg-white d  border border-neutral-300  bg-transparent transition-all ease-in-out duration-150 hover:border-neutral-400 w-full py-3 focus:border-blue-600 pb-10 pt-3 rounded-lg"
               placeholder="This is your Opening Room Headline"
             ></textarea>
           </div>
@@ -337,7 +335,6 @@
             v-model="wallpaperStyle.backgroundImage"
             class="font-normal text-sm text-neutral-600 transition-all ease-in-out duration-150 hover:border-neutral-400 rounded-lg border-[#d4d4d4] border-[1px] py-3 px-2"
           >
-            
             <option
               value="url(https://tuk-cdn.s3.amazonaws.com/can-uploader/backgroundimageno1.png)"
             >
@@ -371,12 +368,12 @@
                 type="text"
                 v-model="currentElementStyle.fontSize"
                 placeholder="14"
-                class="font-normal text-sm text-neutral-600 outline-none placeholder:text-neutral-400 dark:placeholder:text-neutral-400 bg-white dark:bg-neutral-800 dark:text-neutral-400 border border-neutral-300 dark:border-neutral-700 bg-transparent transition-all ease-in-out duration-150 hover:border-neutral-400 w-full rounded-md px-4 py-3 focus:border-blue-600"
+                class="font-normal text-sm text-neutral-600 outline-none placeholder:text-neutral-400  bg-white d  border border-neutral-300  bg-transparent transition-all ease-in-out duration-150 hover:border-neutral-400 w-full rounded-md px-4 py-3 focus:border-blue-600"
                 autocomplete="off"
               />
             </div>
             <p
-              class="px-4 py-[15px] bg-neutral-100 dark:bg-neutral-900 border box-border border-neutral-200 dark:border-neutral-700 rounded font-normal text-sm leading-none text-neutral-600 dark:text-neutral-400"
+              class="px-4 py-[15px] bg-neutral-100 d border box-border border-neutral-200  rounded font-normal text-sm leading-none text-neutral-600 "
             >
               px
             </p>
@@ -385,7 +382,7 @@
           <div class="flex items-center gap-5">
             <div class="h-full rounded">
               <div
-                class="h-full rounded-md border dark:border-neutral-700 box-border"
+                class="h-full rounded-md border  box-border"
                 style="background-color: rgb(0, 0, 0)"
               >
                 <input
@@ -412,7 +409,7 @@
           <div class="flex items-center gap-5">
             <div class="h-full rounded">
               <div
-                class="h-full rounded-md border dark:border-neutral-700 box-border"
+                class="h-full rounded-md border  box-border"
                 style="background-color: rgb(255, 255, 255)"
               >
                 <input
@@ -489,28 +486,28 @@
         </div>
       </div>
     </div>
-  
-  <!-- Support portal starts here -->
-  <div>
-  <div>
-      <img
-        v-if="!showPortal"
-        @click="showPortal = true"
-        class="fixed bottom-6 right-[72px] cursor-pointer z-10"
-        src="../public/images/sp_action_open.svg"
-        alt="setting_icons"
-      />
-      <img
-        v-if="showPortal"
-        @click="showPortal = false"
-        class="fixed bottom-6 right-[72px] cursor-pointer z-10"
-        src="../public/images/sp_action_close.svg"
-        alt="setting_icons"
-      />
-      <!-- @click.stop="showSettingsModel = !showSettingsModel" -->
-    </div>
-    <!-- v-if="showPortal" -->
-    <!-- <div
+
+    <!-- Support portal starts here -->
+    <div>
+      <div>
+        <img
+          v-if="!showPortal"
+          @click="showPortal = true"
+          class="fixed bottom-6 right-[72px] cursor-pointer z-10"
+          src="../public/images/sp_action_open.svg"
+          alt="setting_icons"
+        />
+        <img
+          v-if="showPortal"
+          @click="showPortal = false"
+          class="fixed bottom-6 right-[72px] cursor-pointer z-10"
+          src="../public/images/sp_action_close.svg"
+          alt="setting_icons"
+        />
+        <!-- @click.stop="showSettingsModel = !showSettingsModel" -->
+      </div>
+      <!-- v-if="showPortal" -->
+      <!-- <div
       class=" fixed bottom-4 right-16 text-white text-sm leading-none bg-neutral-800 rounded-md flex flex-col divide-y divide-neutral-700 w-full max-w-[236px] transition-all ease-in-out duration-150"
       :class="showPortal ? 'scale-up-br':'scale-down-br'"
       v-if="showPortal"
@@ -533,10 +530,8 @@
         </ul>
       </div>
     </div> -->
-  </div>
-<!-- Support portal ends here -->
-
-  
+    </div>
+    <!-- Support portal ends here -->
   </div>
 </template>
 <script setup>
@@ -620,4 +615,3 @@ const wallpaperStyle = ref({
   background-size: cover;
 } */
 </style>
-
